@@ -1,0 +1,20 @@
+<h1>Listing Applications</h1>
+
+<%= link_to 'New Application', new_app_path %>
+ 
+<table>
+  <tr>
+    <th>Application</th>
+    <th>IP</th>
+    <th>Command</th>
+  </tr>
+ 
+  <% @app.each do |app| %>
+    <tr>
+      <td><%= app.name %></td>
+      <td><%= app.ip %></td>
+      <td><%= app.command %></td>
+      <td><%= link_to 'Show', app_path(app) %></td>
+    </tr>
+  <% end %>
+</table>
